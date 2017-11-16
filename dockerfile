@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install \
 	tideways-php \
 	php-mongodb \
 	php-mcrypt \
-	php7.0-curl \	
+	php7.0-curl \
+	php7.0-gd \	
 	php7.0-xml  -y 
 
 RUN mkdir /data
