@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+    xhgui:
+        image: dvdche/xhgui
+        container_name: xhgui
+        network_mode: bridge
+        volumes: 
+            - ./www:/var/www/
+            - ./data:/data/
+        ports: 
+            - 8080:80
+        tty: true
