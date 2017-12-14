@@ -4,10 +4,16 @@ services:
     xhgui:
         image: dvdche/xhgui
         container_name: xhgui
+        hostname: xhgui
         network_mode: bridge
         volumes: 
-            - ./www:/var/www/
-            - ./data:/data/
+            - .vol/www:/var/www/
+            - .vol/data:/data/
         ports: 
             - 8080:80
         tty: true
+        hostname: xhgui
+        build:
+            context: .
+            dockerfile: dockerfile
+
