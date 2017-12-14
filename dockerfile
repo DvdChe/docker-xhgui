@@ -24,6 +24,6 @@ VOLUME /var/www
 VOLUME /data
 
 EXPOSE 80
-COPY entrypoint.sh /entrypoint.sh
+COPY files/entrypoint.sh /entrypoint.sh
 COPY files/000-default.conf /etc/apache2/sites-available/000-default.conf
 ENTRYPOINT /entrypoint.sh
