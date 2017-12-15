@@ -11,7 +11,7 @@ chown -R mongodb: /data
 sleep 1
 
 if [ ! -f /var/www/html/.flag ]; then
- 
+
 
     mongo xhprof --eval "db.results.ensureIndex( { 'meta.SERVER.REQUEST_TIME' : -1 } )"
     mongo xhprof --eval "db.results.ensureIndex( { 'profile.main().wt' : -1 } )"
@@ -26,12 +26,13 @@ if [ ! -f /var/www/html/.flag ]; then
     git clone https://github.com/perftools/xhgui.git /var/www/html
     chown -R www-data: /var/www
     su -c 'cd /var/www/html && php install.php' - www-data
-    
+
     touch /var/www/html/.flag
-fi 
+fi
 
 a2enmod rewrite
 /etc/init.d/apache2 start
+
 
 
 /bin/bash

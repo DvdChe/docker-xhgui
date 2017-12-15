@@ -7,8 +7,8 @@ services:
         hostname: xhgui
         network_mode: bridge
         volumes: 
-            - .vol/www:/var/www/
-            - .vol/data:/data/
+            - ./vol/www:/var/www/
+            - ./vol/data:/data/
         ports: 
             - 8080:80
         tty: true
