@@ -2,7 +2,7 @@ version: '2'
 
 services:
     xhgui:
-        image: dvdche/xhgui
+        image: dch/xhgui
         container_name: xhgui
         hostname: xhgui
         network_mode: bridge

@@ -16,7 +16,7 @@ Ideally, **You should run the app in a isolated environment and import manually 
 ## Environment details
 
 - Debian Stretch
-- PHP 7.0
+- PHP 7.0 but it should works on php 5.x.
 - Mongodb  3.2.11
 - Apache 2.4
 - Tideways Apache plug-in
@@ -57,11 +57,24 @@ services:
 tty: true
 ```
 
-Once docker-compose.yml is configured as you want, just put up your container : 
+Once docker-compose.yml is configured as you want, just create your container : 
 
 ```bash
+#If it's first run : 
+sudo docker-compose up
+#if not : 
 sudo docker-compose up -d
 ```
 
-On the first run, the entrypoint script will configure mongodb database, apache and run the xhgui installation with Composer
+On the first run, the entrypoint script will configure mongodb database, apache and run the xhgui installation with Composer. That's why you should not detach your terminal on first run, to make sure everything is ok.
+
+Then, you can connect to http://localhost:8080 to check if app is up. 
+
+Now you'll have to import your xhprof files.
+
+## How to import XHProf files
+
+
+
+
 
