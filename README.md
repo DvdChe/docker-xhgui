@@ -1,5 +1,5 @@
-# docker-xhgui
-docker-xhgui is a contenerization of Perftool's xhgui project ( https://github.com/perftools/xhgui )
+# Docker-xhgui
+Docker-xhgui is a contenerization of Perftool's xhgui project ( https://github.com/perftools/xhgui )
 
 You have to know it's a **quick and dirty** solution.
 
@@ -16,7 +16,7 @@ Ideally, **You should run the app in a isolated environment and import manually 
 ## Environment details
 
 - Debian Stretch
-- PHP 7.0 but it should works on php 5.x.
+- PHP 7.0
 - Mongodb  3.2.11
 - Apache 2.4
 - Tideways Apache plug-in
