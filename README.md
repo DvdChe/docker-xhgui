@@ -72,6 +72,17 @@ Then, you can connect to http://localhost:8080 to check if app is up.
 
 Now you'll have to import your xhprof files.
 
+## How to activate loging of xhprof files :
+
+In the vhost conf : 
+
+
+```
+<VirtualHost xxx>
+#php_admin_value auto_prepend_file "/var/www/xhgui_poller/external/header.php"
+</VirtualHost>
+```
+
 ## How to import XHProf files
 
 
