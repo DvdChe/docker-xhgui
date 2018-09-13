@@ -74,18 +74,16 @@ Now you'll have to import your xhprof files.
 
 ## How to activate loging of xhprof files :
 
-In the vhost conf : 
-
-
+On the server you want to audit :
+  - Put the xhgui project in a specific folder, in /var/www, for instance
+  - Edit the  vhost configuration you want to audit 
 ```
 <VirtualHost xxx>
-#php_admin_value auto_prepend_file "/var/www/xhgui_poller/external/header.php"
+[...]
+php_admin_value auto_prepend_file "/var/www/xhgui_poller/external/header.php"
 </VirtualHost>
 ```
 
 ## How to import XHProf files
-
-
-
 
 
