@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -eux
+
 usermod www-data -s /bin/bash
 
 /etc/init.d/mongodb stop
@@ -10,7 +12,7 @@ chown -R mongodb: /data
 
 sleep 1
 
-if [ ! -f /var/www/html/.flag ]; then
+if [ ! -f /var/www/xhgui/.flag ]; then
 
 
     mongo xhprof --eval "db.results.ensureIndex( { 'meta.SERVER.REQUEST_TIME' : -1 } )"
@@ -22,12 +24,11 @@ if [ ! -f /var/www/html/.flag ]; then
 
 
 
-    rm -rf /var/www/html
-    git clone https://github.com/perftools/xhgui.git /var/www/html
+    git clone https://github.com/perftools/xhgui.git /var/www/xhgui
     chown -R www-data: /var/www
-    su -c 'cd /var/www/html && php install.php' - www-data
+    su - www-data -c 'cd /var/www/xhgui && php install.php' 
 
-    touch /var/www/html/.flag
+    touch /var/www/xhgui/.flag
 fi
 
 a2enmod rewrite
