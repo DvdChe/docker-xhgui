@@ -72,11 +72,22 @@ Then, you can connect to http://localhost:8080 to check if app is up.
 
 Now you'll have to import your xhprof files.
 
+
 ## How to activate loging of xhprof files :
 
-On the server you want to audit :
-  - Put the xhgui project in a specific folder, in /var/www, for instance
-  - Edit the  vhost configuration you want to audit 
+### On the server you want to audit :
+
+- First of all, upload the xhgui project on the server you want to profile, in /var/www, for instance. You can use rsync.
+- Edit the ```xhgui/config/config.default.php``` file and localise this section :
+
+```
+// Profile 1 in 100 requests.
+// You can return true to profile every request.
+'profiler.enable' => function() {
+    return rand(1, 100) === 42;
+},
+```
+- Edit the  vhost configuration you want to audit 
 ```
 <VirtualHost xxx>
 [...]
